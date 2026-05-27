@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-export default function OpeningSection() {
+export default function OpeningSection({ onOpen }: { onOpen?: () => void }) {
   const [guestName, setGuestName] = useState("Nama Tamu");
 
   useEffect(() => {
@@ -17,7 +17,11 @@ export default function OpeningSection() {
   }, []);
 
   return (
-    <section className="relative w-full h-[100svh] flex flex-col justify-between items-center text-center overflow-hidden select-none">
+    <motion.section
+      exit={{ opacity: 0, y: "-120vh" }}
+      transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+      className="relative w-full h-[100svh] flex flex-col justify-between items-center text-center overflow-hidden select-none"
+    >
 
       {/* 1. SOLID DECORATIVE BACKGROUND LAYER - Rendered at 100% full, solid opacity (No transparency!) */}
       <div className="absolute inset-0 z-0">
@@ -165,6 +169,7 @@ export default function OpeningSection() {
           <div className="mt-2.5 flex justify-center w-full">
             <button
               type="button"
+              onClick={onOpen}
               className="px-[22px] py-[6px] bg-[#3A5C80] hover:bg-[#2C4866] text-white font-sans font-medium text-[12.5px] tracking-normal uppercase rounded-[30px] transition-all duration-300 ease-out transform active:scale-95 cursor-pointer shadow-sm"
             >
               Open Invitation
@@ -173,6 +178,6 @@ export default function OpeningSection() {
         </motion.div>
       </div>
 
-    </section>
+    </motion.section>
   );
 }
