@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function OpeningSection() {
   const [guestName, setGuestName] = useState("Nama Tamu");
@@ -31,23 +32,38 @@ export default function OpeningSection() {
       <div className="absolute inset-0 z-20 w-full h-full max-w-[430px] mx-auto pointer-events-none">
 
         {/* MONOGRAM GRAPHIC WREATH - monocres-group.svg */}
-        <div className="absolute top-[20.2%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] flex items-center justify-center ml-[0px]">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 0.95, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="absolute top-[20.2%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] flex items-center justify-center ml-[0px]"
+        >
           <img
             src="/ElegantBluePorcelain-Theme/assets/monocres-group.svg"
             alt="Monogram Wreath"
-            className="w-full h-full object-contain opacity-95"
+            className="w-full h-full object-contain"
           />
-        </div>
+        </motion.div>
 
         {/* MONOGRAM INITIALS LAYER - Center-anchored precisely at 25.2% top */}
-        <div className="absolute top-[20.5%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center ml-[0px]">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="absolute top-[20.5%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center ml-[0px]"
+        >
           <div className="shimmer-smooth font-sans text-[34px] sm:text-[34px] font-medium select-none tracking-normal translate-y-[2px]">
             D|S
           </div>
-        </div>
+        </motion.div>
 
         {/* TITLE HEADER LAYER - Canva: Brittany size 32, letter-spacing 110, line-spacing 1.4 */}
-        <div className="absolute top-[38.8%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-full ml-[0px]">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+          className="absolute top-[38.8%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-full ml-[0px]"
+        >
           <span
             className="font-signature text-[18px] sm:text-[18px] font-normal leading-[1.4] select-none tracking-[0.11em] inline-block py-3 px-2"
             style={{
@@ -60,17 +76,27 @@ export default function OpeningSection() {
           >
             The Wedding Of
           </span>
-        </div>
+        </motion.div>
 
         {/* GROOM NAME LAYER - Center-anchored precisely at 45.2% top */}
-        <div className="absolute top-[45.2%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-full ml-[0px]">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
+          className="absolute top-[45.2%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-full ml-[0px]"
+        >
           <h1 className="shimmer-smooth font-sans text-[34px] sm:text-[34px] leading-none uppercase font-medium text-center select-none">
             DENY KURNIA
           </h1>
-        </div>
+        </motion.div>
 
         {/* AMPERSAND LAYER - Center-anchored precisely at 51.0% top */}
-        <div className="absolute top-[51.2%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-full ml-[0px]">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
+          className="absolute top-[51.2%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-full ml-[0px]"
+        >
           <span
             className="font-signature text-[34px] sm:text-[34px] font-normal leading-none select-none tracking-normal"
             style={{
@@ -83,26 +109,41 @@ export default function OpeningSection() {
           >
             &
           </span>
-        </div>
+        </motion.div>
 
         {/* BRIDE NAME LAYER - Center-anchored precisely at 55.8% top */}
-        <div className="absolute top-[56.2%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-full ml-[0px]">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.0, duration: 0.8, ease: "easeOut" }}
+          className="absolute top-[56.2%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-full ml-[0px]"
+        >
           <h2 className="shimmer-smooth font-sans text-[34px] sm:text-[34px] leading-none uppercase font-medium text-center select-none">
             SEPTIANI
           </h2>
-        </div>
+        </motion.div>
 
         {/* ORNAMENTAL DIVIDER LAYER - Center-anchored precisely at 62.2% top */}
-        <div className="absolute top-[61.5%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-[210px] sm:w-[210px] ml-[0px]">
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 0.95, scaleX: 1 }}
+          transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
+          className="absolute top-[61.5%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-[210px] sm:w-[210px] ml-[0px]"
+        >
           <img
             src="/ElegantBluePorcelain-Theme/assets/devider1.svg"
             alt="Divider Ornament"
-            className="w-full h-auto object-contain opacity-95"
+            className="w-full h-auto object-contain"
           />
-        </div>
+        </motion.div>
 
         {/* CARD CONTAINER FOR GUEST DETAILS & ACTION BUTTON */}
-        <div className="absolute top-[78%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-[78%] max-w-[310px] bg-white/[0.45] backdrop-blur-[4px] rounded-[20px] pt-[14px] pb-[12px] px-5 shadow-[0_8px_32px_0_rgba(15,42,74,0.04)] pointer-events-auto ml-[0px]">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.4, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute top-[78%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-[78%] max-w-[310px] bg-white/[0.45] backdrop-blur-[4px] rounded-[20px] pt-[14px] pb-[12px] px-5 shadow-[0_8px_32px_0_rgba(15,42,74,0.04)] pointer-events-auto ml-[0px]"
+        >
           {/* GUEST DETAILS */}
           <div className="flex flex-col items-center space-y-0.5 text-center leading-[1.5]">
             <p className="font-sans text-[12px] font-light tracking-normal text-[#3A5C80]">
@@ -129,7 +170,7 @@ export default function OpeningSection() {
               Open Invitation
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
 
     </section>
