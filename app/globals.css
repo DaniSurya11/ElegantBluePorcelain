@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Brittany Signature';
+  src: url('/fonts/BrittanySignature.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-porcelain-navy: #0f2a4a;
+  --color-porcelain-light-navy: #1b3d66;
+  --color-porcelain-gold: #c5a880;
+  --color-porcelain-dark-gold: #b39366;
+  --color-porcelain-ivory: #fcf9f2;
+  --color-porcelain-cream: #f7f1e8;
+  --color-porcelain-bg-left: #f3eadc;
+  --color-porcelain-blue-gray: #dbe3ed; /* soft blue-gray background for button */
+  
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, Cambria, serif;
+  --font-script: var(--font-allura), cursive;
+  --font-signature: 'Brittany Signature', cursive;
+  --font-brittany: 'Brittany Signature', cursive;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 120s linear infinite;
+}
+
+body {
+  background-color: #f7f1e8;
+  color: #0f2a4a;
+  font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
