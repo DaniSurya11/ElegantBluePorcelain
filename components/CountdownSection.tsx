@@ -29,9 +29,9 @@ export default function CountdownSection() {
 
   return (
     <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      initial={{ y: "100%" }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
       className="relative w-full h-[100svh] flex flex-col justify-between items-center text-center overflow-hidden select-none"
     >
       {/* 1. SECTION 2 BACKGROUND IMAGE */}

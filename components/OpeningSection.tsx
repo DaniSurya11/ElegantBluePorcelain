@@ -18,8 +18,8 @@ export default function OpeningSection({ onOpen }: { onOpen?: () => void }) {
 
   return (
     <motion.section
-      exit={{ opacity: 0, y: "-120vh" }}
-      transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+      exit={{ y: "-100%" }}
+      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
       className="relative w-full h-[100svh] flex flex-col justify-between items-center text-center overflow-hidden select-none"
     >
 
