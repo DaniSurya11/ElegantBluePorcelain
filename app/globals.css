@@ -45,3 +45,66 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* ==========================================
+   ELEGANT TEXT SHIMMER EFFECT (GOODCHOICE AUDIT)
+   ========================================== */
+.shimmer-smooth {
+  --speed: 2.2s; /* Kecepatan sapuan pelan yang sangat anggun */
+  --spread: clamp(24px, 1.5em, 50px); /* Jangkauan lebar kilau */
+  --feather: 14px; /* Kelembutan tepi kilau */
+  --hl-rgb: 255, 255, 255; /* Kilauan cahaya berwarna putih */
+  --base-color: #c89116; /* Warna dasar emas solid */
+
+  display: inline-block;
+
+  /* Layer 1: Sapuan kilau putih lembut yang dianimasikan */
+  /* Layer 2: Warna dasar teks gradasi hitam-ke-emas asli */
+  background-image:
+    linear-gradient(90deg,
+      #0000 calc(50% - var(--spread)),
+      rgba(var(--hl-rgb), 0.15) calc(50% - var(--spread) + var(--feather)),
+      rgba(var(--hl-rgb), 0.70) 50%,
+      rgba(var(--hl-rgb), 0.15) calc(50% + var(--spread) - var(--feather)),
+      #0000 calc(50% + var(--spread))
+    ),
+    linear-gradient(90deg, #000000 0%, #c89116 50%, #c89116 100%);
+
+  background-size: 250% 100%, auto;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 120% 0, 0 0;
+
+  /* Masking background agar masuk ke dalam karakter teks */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Safari/iOS Mobile Fix */
+
+  /* Sapuan konstan satu arah dari kiri ke kanan */
+  animation: shimmer-sweep-ltr var(--speed) linear infinite reverse;
+}
+
+@keyframes shimmer-sweep-ltr {
+  0% {
+    background-position: -120% 0, 0 0;
+  }
+  100% {
+    background-position: 120% 0, 0 0;
+  }
+}
+
+/* Optimasi kilau di layar mobile (iPhone 12 Pro, dll) */
+@media (max-width: 480px) {
+  .shimmer-smooth {
+    --spread: 22px;
+    --feather: 10px;
+  }
+}
+
+/* Dukung preferensi sistem hemat gerakan/daya */
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-smooth {
+    animation: none !important;
+  }
+}
+

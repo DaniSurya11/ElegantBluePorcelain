@@ -41,16 +41,7 @@ export default function OpeningSection() {
 
         {/* MONOGRAM INITIALS LAYER - Center-anchored precisely at 25.2% top */}
         <div className="absolute top-[20.5%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center ml-[0px]">
-          <div
-            className="font-sans text-[34px] sm:text-[34px] font-medium select-none tracking-normal translate-y-[2px]"
-            style={{
-              backgroundImage: "linear-gradient(90deg, #000000 0%, #c89116 50%, #c89116 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              color: "transparent"
-            }}
-          >
+          <div className="shimmer-smooth font-sans text-[34px] sm:text-[34px] font-medium select-none tracking-normal translate-y-[2px]">
             D|S
           </div>
         </div>
@@ -73,16 +64,7 @@ export default function OpeningSection() {
 
         {/* GROOM NAME LAYER - Center-anchored precisely at 45.2% top */}
         <div className="absolute top-[45.2%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-full ml-[0px]">
-          <h1
-            className="font-sans text-[34px] sm:text-[34px]  leading-none uppercase font-medium text-center select-none"
-            style={{
-              backgroundImage: "linear-gradient(90deg, #000000 0%, #c89116 50%, #c89116 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              color: "transparent"
-            }}
-          >
+          <h1 className="shimmer-smooth font-sans text-[34px] sm:text-[34px] leading-none uppercase font-medium text-center select-none">
             DENY KURNIA
           </h1>
         </div>
@@ -105,16 +87,7 @@ export default function OpeningSection() {
 
         {/* BRIDE NAME LAYER - Center-anchored precisely at 55.8% top */}
         <div className="absolute top-[56.2%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center w-full ml-[0px]">
-          <h2
-            className="font-sans text-[34px] sm:text-[34px] leading-none uppercase font-medium text-center select-none"
-            style={{
-              backgroundImage: "linear-gradient(90deg, #000000 0%, #c89116 50%, #c89116 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              color: "transparent"
-            }}
-          >
+          <h2 className="shimmer-smooth font-sans text-[34px] sm:text-[34px] leading-none uppercase font-medium text-center select-none">
             SEPTIANI
           </h2>
         </div>
